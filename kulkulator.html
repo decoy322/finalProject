@@ -1,0 +1,106 @@
+<div class="row">
+<div class="col-sm-12 col-md-8">
+<div id="body_calc" class="alert alert-info">
+<form id="valute_calc_form" class="form-horizontal">
+ <fieldset class="form-group row">
+    <legend class="col-form-label col-sm-4 float-sm-left pt-0">Ваш пол:</legend>
+    <div class="col-sm-8">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="pol" id="pol1" value="man" checked="">
+        <label class="form-check-label" for="pol1">мужской</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="pol" id="pol2" value="woman">
+        <label class="form-check-label" for="pol2">женский</label>
+      </div>
+    </div>
+  </fieldset>
+
+
+<div class="form-group row">
+    <label for="ves" class="col-6 control-label">Ваша масса (<span style="font-style:italic">кг</span>)</label>
+    <div class="col-6">
+      <input type="number" class="form-control" id="ves" placeholder="Ваш вес" name="ves" value="75" min="25" max="250">
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label for="rost" class="col-6 control-label">Ваш рост (<span style="font-style:italic">см</span>)</label>
+    <div class="col-6">
+      <input type="number" class="form-control" id="rost" placeholder="Ваш рост" name="rost" value="175" min="115" max="250">
+    </div>
+</div>
+
+<p class="calc_title" style="text-align:center; font-size:1.5rem">Что пили</p>
+<div class="row">
+	<div class="col-6" style="text-align:center">
+		Крепость (<span style="font-style:italic">%</span>) 
+		<a tabindex="0" class="btn btn-info btn-sm alco_btn" data-container="body" data-html="true" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="<p>Квас - 0,3-2,6</p><p>Пиво - 3-8</p><p>Вино - 5-20</p><p>Шампанское - 5-18</p><p>Настойка - 18-35</p><p>Водка, коньяк, текила - 40</p>" data-original-title="" title="">?</a>
+	</div>
+
+<div class="col-6" style="text-align:center">Объем(<span style="font-style:italic">мл</span>)</div>
+</div>
+
+<div id="spirtnoe">
+<div class="row">
+<div class="col-6">
+<input class="form-control" type="number" id="what2" name="what[]" value="40"> 
+</div>
+<div class="col-6">
+<input class="form-control" type="number" name="colvo[]" value="100">
+</div>
+</div>
+<div class="row">
+	<button type="button" data-alco="5" class="btn btn-sm btn-info btn-secondary alco_btn" style="margin:5px">Пиво(5%)</button>
+	<button type="button" data-alco="11" class="btn btn-sm btn-info btn-secondary alco_btn" style="margin:5px">Шампанское(11%)</button>
+	<button type="button" data-alco="12" class="btn btn-sm btn-info btn-secondary alco_btn" style="margin:5px">Вино(12%)</button>
+	<button type="button" data-alco="40" class="btn btn-sm btn-info btn-secondary alco_btn" style="margin:5px">Водка, коньяк(40%)</button></div>
+</div>
+
+
+
+<div class="row"><div class="col-sm-12">
+<button type="button" id="add_b" class="b-button btn btn-primary btn-lg">Добавить напиток</button>
+</div>
+</div>
+<div class="row" style="margin-bottom:20px">
+	<div class="col-sm-12">
+		<div class="custom-control custom-checkbox">
+		  <input type="checkbox" class="custom-control-input" id="customCheck1" name="jel" value="p" checked="checked">
+		  <label class="custom-control-label" for="customCheck1">на пустой желудок</label>
+		</div>
+	</div>
+</div><script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 03-02-2016(1) -->
+<ins class="adsbygoogle" style="display: none !important;" data-ad-client="ca-pub-2629880224971275" data-ad-slot="9864558349" data-ad-format="auto" data-adsbygoogle-status="done"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><div class="row">
+    <div class="col text-center">
+		<button class="b-button btn btn-primary btn-lg center-block" name="save" id="cbutton">
+			<span class="text">ПОСЧИТАТЬ</span>
+		</button>
+    </div>
+    </div>
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      всего расчетов - <strong>4042737</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+</div>
+			<div id="res_div">
+
+			</div>
+			<div style="clear:both"></div>
+			<input type="hidden" name="action" value="get_alcohol_calc">
+			<input type="hidden" name="id" value="190">
+			</form>
+			</div>
+			</div>
+<div class="col-sm-0 col-md-4">
+
+</div>
+
+
+</div>
