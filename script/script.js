@@ -29,21 +29,17 @@ let request;
 
 /*modal-window*/
 
-//переменные	
-
 		let formRegistration = document.querySelector("#formRegistration");
 		let formUserInfo = document.querySelector("#formUserInfo");
 		let greeting = document.querySelector("#greeting");
 
-		//слушатели событий
+
 
 		document.addEventListener('DOMContentLoaded', checkReg);
-		document.getElementById('buttonRegistration').addEventListener('click', checkForm); //это
-		/*document.getElementById('buttonSaveUserInfo').addEventListener('click', checkForm);*/ //это
+		document.getElementById('buttonRegistration').addEventListener('click', checkForm);
 		formRegistration.addEventListener('input', checkInput);
 		document.querySelector('#btn3').addEventListener('click', userExit);
 
-		//обработка нажатия выхода (удалить куку)
 		function userExit(e) {
 			e.preventDefault();
 			let cookie = document.cookie.split('; ');
@@ -61,9 +57,6 @@ let request;
 			location.reload();
 		};
 
-
-		/*-----------------------------------------------------------------------------*/
-		//проверка формы
 		function checkForm(e) {
 			e.preventDefault();
 			let form = e.target.parentElement;
@@ -84,16 +77,14 @@ let request;
 						}
 					}
 				}
-				location.reload();//обновляем страницу
-			};
+				location.reload();
 		}
 		/*-----------------------------------------------------------------------------*/
-		function checkInput(e) {//проверка ввода данных в инпуты "на лету"
+		function checkInput(e) {
 			if (!(e.target.classList.contains("form__input"))) return;
 			checkErrorElem(e.target);
 		};
 		/*-----------------------------------------------------------------------------*/
-		//проверка конкретного инпута (вызов на стр.115 и стр.135)
 		function checkErrorElem(elem) {
 			let regEmail = /^[a-z0-9_]{3,}@[A-Z0-9_-]+\.+\.?[A-Z]{2,4}$/i;
 			let regUpperL = /[A-Z]+/;
@@ -102,34 +93,20 @@ let request;
 			let regTel = /^\+\d{12}$/;
 			let valueError = false;
 			let value = elem.value;
-			//проверка на заполненность
+
 			if (elem.classList.contains("_req") && elem.value.length == '') {
 				addClassError(elem.parentElement, true);
 				return true;
 			};
 			
-			//проверка элементов формы регистрации
-
-			//проверка почты
-
 			if (elem.id == 'formEmail' && (!(regEmail.test(value)))) valueError = true;
-
-			//проверка пароля
 
 			if (elem.id == 'formPassword' && (!(value.length >= 6 && regUpperL.test(value) && regLowerL.test(value) &&
 				regDigit.test(value)))) valueError = true;
 
-			//проверка подтверждения пароля
-
 			if ((elem.id == 'formRepeatPassword') && ((value != document.getElementById("formPassword").value))) valueError = true;
 
-			//проверка формы информации о пользователе
-
-			/*if ((elem.id == 'formYearBirth') && ((+value) < 1920) || (+value > 2020)) valueError = true;*/
 			if (elem.id == 'formTel') valueError = !regTel.test(value);
-			/*if (elem.id == 'formSkype' && elem.value != '') valueError = !regSkype.test(value);*/
-
-			//если флаг ошибки = true, то подсвечиваем поле
 
 			if (valueError) {
 				addClassError(elem.parentElement);
@@ -139,8 +116,9 @@ let request;
 				return false;
 			};
 		};
+
 		/*-----------------------------------------------------------------------------*/
-		//функции добавления и удаления классов ошибок
+
 		function addClassError(inputParent, empty = false) {
 			if (empty) inputParent.querySelector(".form__label").classList.add("label--error");
 			inputParent.querySelector(".form__input").classList.add("input--error");
@@ -151,9 +129,9 @@ let request;
 			inputParent.querySelector(".form__input").classList.remove("input--error");
 			inputParent.querySelector(".form__prompt").classList.remove("prompt--error");
 		};
+
 		/*-----------------------------------------------------------------------------*/
 
-		//проверка куков при обновлении или загрузке страницы
 		function checkReg(e) {
 			let cookie = document.cookie.split(';');
 			let cookieObject = {};
@@ -174,18 +152,10 @@ let request;
 					document.getElementById(key).value = cookieObject[key];
 				}
 			} else {
-				/*formRegistration.hidden = false;*/
 				btn3.hidden = true;
 			};
 		};
-		/*function deleteCookie(userEmail) {
-  		setCookie(userEmail, "", {
-    	'max-age': -1
-  		})
-		}*/
 
-
-		/*modal-window-end*/
 
 		$(function(){
 			$('#btn').click(function(){
@@ -193,13 +163,11 @@ let request;
 				$('.popup-fade').show('drop', 800);
 
 			});
-			// Клик по ссылке "Закрыть".
 			$('.popup-close').click(function() {
 				$(this).parents('.popup-fade').fadeOut();
 				return false;
 			});        
  
-			// Закрытие по клавише Esc.
 			$(document).keydown(function(e) {
 				if (e.keyCode === 27) {
 					e.stopPropagation();
@@ -207,7 +175,6 @@ let request;
 				}
 			});
 	
-			// Клик по фону, но не по окну.
 			$('.popup-fade').click(function(e) {
 				if ($(e.target).closest('.popup').length == 0) {
 				$(this).fadeOut();					
@@ -217,6 +184,7 @@ let request;
 
 
 /*show-hide-menu*/
+
 $(document).ready(function() {
 		  "use strict";
 		  $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
@@ -248,23 +216,9 @@ $(document).ready(function() {
 		window.onload = function() {
      window.setTimeout(function() {
        document.body.classList.add('loaded');
-     }, /*1500*/);
+     },);
    }
    /*preloader-end*/
-
-   /*modal onload window*/
-   /*$(document).ready(function(){
-        $("#myModal").modal('show');
-    });*/
-
-/*$(window).on('load', function() {
-        $('#myModal').modal('show');
-    });*/
-/*modal onload window end*/
-
-/*404-error*/
-
-// WIP - need to clean up, work on initial state and handle issue with multiple lines on mobile
 
 var tl = new TimelineMax();
 
