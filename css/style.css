@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;600&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');*/
 header {
     background: #000;
     max-height: 100%;
@@ -385,24 +386,27 @@ section {
 .slot_block_wine {
     background-image: url(../images/wine/baner1.png);
 }
-.sm_block1, .sm_block2, .sm_block3 {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    min-height: 248px;
-    width: 637px;
-}
-.sm_block1 {
-    background-image: url(../images/main/smBlock1.png);
-    
-}
-.sm_block2 {
-    background-image: url(../images/main/smBlock2.png);
-    
-}
-.sm_block3 {
-    background-image: url(../images/main/smBlock3.png);
-}
+
+        /*show blocks images on main*/
+    .sm_block1, .sm_block2, .sm_block3 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        min-height: 248px;
+        width: 637px;
+    }
+
+    .sm_block1 {
+        background-image: url(../images/main/smBlock1.png);
+        
+    }
+    .sm_block2 {
+        background-image: url(../images/main/smBlock2.png);
+        
+    }
+    .sm_block3 {
+        background-image: url(../images/main/smBlock3.png);
+    }
 
 .button {
     display: inline-block;
@@ -579,6 +583,21 @@ section {
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+/*.logo {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.logo a {
+    font-size: 36px;
+    font-weight: 500;
+    color: #0e8ce4;
+}*/
+
 .header_search {
     height: 90px;
 }
@@ -603,6 +622,7 @@ section {
     width: 100%;
     height: 100%;
 }
+
 .header_search_input {
     display: block;
     position: relative;
@@ -615,6 +635,7 @@ section {
     color: #7f7f7f;
     float: left;
 }
+
 .header_search_input::-webkit-input-placeholder {
     font-size: 16px !important;
     font-weight: 300;
@@ -905,8 +926,7 @@ select option {
 .bg-black {
     background-color: #000;
 }
-
-
+/*_______________MENU_____________*/
 .menu {
     width: 100%;
 }
@@ -955,8 +975,9 @@ select option {
   list-style: none;
   padding: 0;
   position: relative;
+  /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
   box-sizing: border-box;
-  clear: right;
+      clear: right;
 }
 
 .menu > ul:before,
@@ -1107,50 +1128,53 @@ select option {
 .loaded .preloader {
   display: none;
 }
+/*preloader-end*/
 
+/*modal-window*/
 
-#btn, #btn2, #btn3 {
-    background-color: #fff;
-    border-radius: 5px;
-    color: #000;
-    padding: 8px;
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 0;
-}
-.popup-fade:before {
-    content: '';
-    background: #000;
-    position: fixed; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%;
-    opacity: 0.7;
-    z-index: -1;
-}
-.popup-fade {
-    display: flex;
-    opacity: 0;
-    transition: hide;
-}
-.form {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    padding: 20px 30px 20px 20px;
-    width: 360px;
-    margin-left: -200px;    
-    background: #f3f3f3;
-    border-radius: 4px; 
-    z-index: 999999;
-    opacity: 1;
-}
-.popup-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
+        #btn, #btn2, #btn3 {
+            background-color: #fff;
+            border-radius: 5px;
+            color: #000;
+            padding: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .popup-fade:before {
+            content: '';
+            background: #000;
+            position: fixed; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        .popup-fade {
+            display: flex;
+            opacity: 0;
+            transition: hide;
+        }
+        .form {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            padding: 20px 30px 20px 20px;
+            width: 360px;
+            margin-left: -200px;    
+            background: #f3f3f3;
+            border-radius: 4px; 
+            z-index: 999999;
+            opacity: 1;
+        }
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        /*modal-window*/
 
 #formRegistration {
     background-color: #f3f3f3;
@@ -1325,6 +1349,7 @@ grid-row-gap: 20px;
 }
 
 
+/*______________________wine site__________________*/
 
 .card-body button {
     border: 1 solid #7e2929;
@@ -1349,8 +1374,9 @@ grid-row-gap: 20px;
     padding-top: 20px;
 }
 
-
-
+/*!*/
+/*first media*//*first media*//*first media*//*first media*//*first media*//*first media*/
+/*lightgreen;lightgreen;lightgreen;lightgreen;lightgreen;lightgreen;lightgreen;lightgreen;lightgreen;lightgreen;*/
 
 @media (max-width:  1300px) {
     .wrap_block {
@@ -1402,9 +1428,7 @@ grid-row-gap: 20px;
     .preloader_image {
         margin-left: 0;
     }
-
-
-
+    /*404-error*/
     .block_404 {
         display: flex;
         flex-direction: column;
@@ -1412,6 +1436,7 @@ grid-row-gap: 20px;
         align-items: center;
     }
 
+    /*MENU_MOBILE*/
     .menu-container {
     width: 100%;
   }
@@ -1467,6 +1492,7 @@ grid-row-gap: 20px;
   .menu .show-on-mobile {
     display: block;
   }
+  /*!*/
 
     .header_main {
         height: 104px;
@@ -1622,7 +1648,7 @@ grid-row-gap: 20px;
     .preloader_image {
         margin-left: 0;
     }
-
+    /*404-error*/
     .block_404 {
         justify-content: center;
         text-align: center;
