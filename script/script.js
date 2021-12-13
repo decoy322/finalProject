@@ -245,4 +245,4 @@ function animateHandle() {
 $('#cb-replay').on('click', function(){
   splitTextTimeline.restart()
   handleTL.restart()
-})
+})};
