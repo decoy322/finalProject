@@ -11,7 +11,6 @@ let request;
 
  	request.onload = function () {
     	if (request.status == 200) {
-      		console.log(request.response);
       		allResponse = JSON.parse(request.response);
       		document.getElementById('valUSD').innerText = allResponse[0].ccy;
       		document.getElementById('buyUSD').innerText = allResponse[0].buy;
@@ -29,16 +28,7 @@ let request;
 
 /*modal-window*/
 
-		let formRegistration = document.querySelector("#formRegistration");
-		let formUserInfo = document.querySelector("#formUserInfo");
-		let greeting = document.querySelector("#greeting");
-
-
-
-		document.addEventListener('DOMContentLoaded', checkReg);
-		document.getElementById('buttonRegistration').addEventListener('click', checkForm);
-		formRegistration.addEventListener('input', checkInput);
-		document.querySelector('#btn3').addEventListener('click', userExit);
+		
 
 		function userExit(e) {
 			e.preventDefault();
@@ -183,6 +173,18 @@ let request;
 		});
 
 
+		let formRegistration = document.querySelector("#formRegistration");
+		let formUserInfo = document.querySelector("#formUserInfo");
+		let greeting = document.querySelector("#greeting");
+
+
+
+		document.addEventListener('DOMContentLoaded', checkReg);
+		document.getElementById('buttonRegistration').addEventListener('click', checkForm);
+		formRegistration.addEventListener('input', checkInput);
+		document.querySelector('#btn3').addEventListener('click', userExit);
+
+
 /*show-hide-menu*/
 
 $(document).ready(function() {
@@ -216,8 +218,8 @@ $(document).ready(function() {
 		window.onload = function() {
      window.setTimeout(function() {
        document.body.classList.add('loaded');
-     },);
-   }
+     });
+   };
    /*preloader-end*/
 
 var tl = new TimelineMax();
@@ -243,6 +245,6 @@ function animateHandle() {
 }
 
 $('#cb-replay').on('click', function(){
-  splitTextTimeline.restart()
-  handleTL.restart()
+  splitTextTimeline.restart();
+  handleTL.restart();
 })};
