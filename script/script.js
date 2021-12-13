@@ -28,7 +28,16 @@ let request;
 
 /*modal-window*/
 
-		
+		let formRegistration = document.querySelector("#formRegistration");
+		let formUserInfo = document.querySelector("#formUserInfo");
+		let greeting = document.querySelector("#greeting");
+
+
+		document.addEventListener('DOMContentLoaded', checkReg);
+		document.getElementById('buttonRegistration').addEventListener('click', checkForm);
+
+		formRegistration.addEventListener('input', checkInput);
+		document.querySelector('#btn3').addEventListener('click', userExit);
 
 		function userExit(e) {
 			e.preventDefault();
@@ -47,15 +56,17 @@ let request;
 			location.reload();
 		};
 
+
+		/*-----------------------------------------------------------------------------*/
 		function checkForm(e) {
 			e.preventDefault();
 			let form = e.target.parentElement;
 			let countError = 0;
 			for (let elem of form.elements) {
 				if (!(elem.classList.contains("form__input"))) continue;
-				countError += (checkErrorElem(elem)) ? 1 : 0;//проверка инпута и сбор ошибок
+				countError += (checkErrorElem(elem)) ? 1 : 0;
 			};
-			if (countError == 0) {//если ошибок нет пишем куки 
+			if (countError == 0) {
 				let expDate = new Date();
 				expDate.setTime((new Date).getTime() + 60 * 1000 * 15);
 				if (form.id == "formRegistration") document.cookie = "userEmail=" + form.querySelector('#formEmail').value + ";expires=" + expDate.toGMTString() + ";path=/";
@@ -68,9 +79,10 @@ let request;
 					}
 				}
 				location.reload();
+			};
 		}
 		/*-----------------------------------------------------------------------------*/
-		function checkInput(e) {
+		function checkInput(e) {//проверка ввода данных в инпуты "на лету"
 			if (!(e.target.classList.contains("form__input"))) return;
 			checkErrorElem(e.target);
 		};
@@ -84,17 +96,23 @@ let request;
 			let valueError = false;
 			let value = elem.value;
 
+
 			if (elem.classList.contains("_req") && elem.value.length == '') {
 				addClassError(elem.parentElement, true);
 				return true;
 			};
-			
+
+
+
 			if (elem.id == 'formEmail' && (!(regEmail.test(value)))) valueError = true;
+
 
 			if (elem.id == 'formPassword' && (!(value.length >= 6 && regUpperL.test(value) && regLowerL.test(value) &&
 				regDigit.test(value)))) valueError = true;
 
+
 			if ((elem.id == 'formRepeatPassword') && ((value != document.getElementById("formPassword").value))) valueError = true;
+
 
 			if (elem.id == 'formTel') valueError = !regTel.test(value);
 
@@ -106,9 +124,7 @@ let request;
 				return false;
 			};
 		};
-
 		/*-----------------------------------------------------------------------------*/
-
 		function addClassError(inputParent, empty = false) {
 			if (empty) inputParent.querySelector(".form__label").classList.add("label--error");
 			inputParent.querySelector(".form__input").classList.add("input--error");
@@ -119,7 +135,6 @@ let request;
 			inputParent.querySelector(".form__input").classList.remove("input--error");
 			inputParent.querySelector(".form__prompt").classList.remove("prompt--error");
 		};
-
 		/*-----------------------------------------------------------------------------*/
 
 		function checkReg(e) {
@@ -136,7 +151,6 @@ let request;
 				btn.hidden = true;
 				btn2.hidden = true;
 				btn3.hidden = false;
-				/*formUserInfo.hidden = false;*/
 				for (let key in cookieObject) {
 					if (key == 'userEmail') continue;
 					document.getElementById(key).value = cookieObject[key];
@@ -147,6 +161,9 @@ let request;
 		};
 
 
+
+		/*modal-window-end*/
+
 		$(function(){
 			$('#btn').click(function(){
 				$('.popup-fade').css('opacity', '1');
@@ -156,37 +173,24 @@ let request;
 			$('.popup-close').click(function() {
 				$(this).parents('.popup-fade').fadeOut();
 				return false;
-			});        
- 
+			});
+
 			$(document).keydown(function(e) {
 				if (e.keyCode === 27) {
 					e.stopPropagation();
 					$('.popup-fade').fadeOut();
 				}
 			});
-	
+
 			$('.popup-fade').click(function(e) {
 				if ($(e.target).closest('.popup').length == 0) {
-				$(this).fadeOut();					
+				$(this).fadeOut();
 				}
-			});	
+			});
 		});
 
 
-		let formRegistration = document.querySelector("#formRegistration");
-		let formUserInfo = document.querySelector("#formUserInfo");
-		let greeting = document.querySelector("#greeting");
-
-
-
-		document.addEventListener('DOMContentLoaded', checkReg);
-		document.getElementById('buttonRegistration').addEventListener('click', checkForm);
-		formRegistration.addEventListener('input', checkInput);
-		document.querySelector('#btn3').addEventListener('click', userExit);
-
-
 /*show-hide-menu*/
-
 $(document).ready(function() {
 		  "use strict";
 		  $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
@@ -219,8 +223,13 @@ $(document).ready(function() {
      window.setTimeout(function() {
        document.body.classList.add('loaded');
      });
-   };
+   }
    /*preloader-end*/
+
+/*modal onload window end*/
+
+/*404-error*/
+
 
 var tl = new TimelineMax();
 
@@ -230,7 +239,7 @@ tl.add(function(){
 }, 0.2)
 
 function animateCopy() {
-  mySplitText.split({type:"chars, words"}) 
+  mySplitText.split({type:"chars, words"})
   splitTextTimeline.staggerFrom(mySplitText.chars, 0.001, {autoAlpha:0, ease:Back.easeInOut.config(1.7), onComplete: function(){
     animateHandle()
   }}, 0.05);
@@ -245,6 +254,25 @@ function animateHandle() {
 }
 
 $('#cb-replay').on('click', function(){
-  splitTextTimeline.restart();
-  handleTL.restart();
-})};
+  splitTextTimeline.restart()
+  handleTL.restart()
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.onload = function() {
+     window.setTimeout(function() {
+       document.body.classList.add('loaded');
+     });
+   };
