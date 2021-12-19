@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Shopping/Shopping.css">
     <title>Вино</title>
 </head>
 <body>
@@ -55,7 +56,7 @@
                         </div>
                  </div> 
                  <div class="col-lg-3  col-md-2 col-sm-12 py-4 but_mob_fix d-flex justify-content-center align-items-center">
-                        <button class="py-3 px-5 mr-3 make_pay">Оформить заказ</button>
+                        <button class="py-3 px-5 mr-3 make_pay"><a href="form_buy.html">Оформить заказ</a></button>
                  </div>        
             </div>
         </div>
@@ -67,37 +68,19 @@
     <!-- Wishlist -->
     <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
         <div class="col-md-6 col-sm-4 val_all">
-        <div class="col-md-3 col-sm-12 val_item">
-        <p class="mr-2" id="valUSD"></p>
-        <p id="buyUSD"></p>
-        </div>
-        <div class="col-md-3 col-sm-12 val_item">
-        <p class="mr-2" id="valEUR"></p> 
-        <p id="buyEUR"></p>
-        </div>
-        </div>
-        <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-            <div class="wishlist_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918681/heart.png" alt=""></div>
-                <div class="wishlist_content">
-                    <div class="wishlist_text"><a href="#">Желаймое</a></div>
-                    <div class="wishlist_count">1</div>
-                 </div>
-        </div> <!-- Cart -->
-            <div class="cart">
-                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                    <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
-                        <div class="cart_count"><span>3</span></div>
-                    </div>
-                    <div class="cart_content">
-                        <div class="cart_text"><a href="#">Корзина</a></div>
-                        <div class="cart_price">185</div>
-                    </div>
-                </div>
+            <div class="col-md-3 col-sm-12 val_item">
+                <p class="mr-2" id="valUSD"></p>
+                <p id="buyUSD"></p>
+            </div>
+            <div class="col-md-3 col-sm-12 val_item">
+                <p class="mr-2" id="valEUR"></p> 
+                <p id="buyEUR"></p>
             </div>
         </div>
-    <!-- <a href="#" class="logo">Logo</a> -->
+        <div id="cart" class="cart"></div>
+    </div>
+        <!-- modal-cart-window -->
     <ul class="clearfix">
-      <!-- <li><a href="#">Home</a></li> -->
       <li><a href="#">Вино и алкоголь</a>
         <ul>
             <li><a href="wine.html">Вино</a></li>    
@@ -149,9 +132,9 @@
       </div>
       </div>
 
-<div id="products" class="container">
+<div id="products" class="container"></div>
 
-    </div>
+<div id="shopping" class="container"></div>
 
     <div class="popup-fade">
         <div class="popup">
@@ -181,7 +164,6 @@
     </form>
     </div>
     </div>
-
 <div class="contaiter-fluid">
 <footer class="bg-black">
     <div class="container-fluid">
@@ -210,8 +192,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script src="script/script.js"></script>
-<script src="constants/catalogWine.js"></script>
-<script src="constants/rootWine.js"></script>
-<script src="Products/Products_wine.js"></script>
+
+<script src="utils/localStorageUtil.js"></script>
+
+<script src="constants/catalog.js"></script>
+
+<script src="constants/root.js"></script>
+
+<script src="Products/products.js"></script>
+
+<script src="cart/cart.js"></script>
+
+<script src="Shopping/Shopping.js"></script>
+
 </body>
 </html>

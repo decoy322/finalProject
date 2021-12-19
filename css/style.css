@@ -227,7 +227,7 @@ h6::selection {}
     text-align: center;
 }
 .form_call input {
-    width: 60%;
+    width: 100%;
     padding: 1.5%;
     margin: 2% 0 2% 0;
 }
@@ -284,8 +284,12 @@ form button:hover {
     border-bottom-left-radius: 20% 40%;
     transition: 1s;
 }
+.color_black h2, h3 {
+    color: #000;
+}
 input, textarea {
     border-radius: 1%;
+    width: 100%;
 }
 section {
     display: block;
@@ -583,20 +587,6 @@ section {
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-/*.logo {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.logo a {
-    font-size: 36px;
-    font-weight: 500;
-    color: #0e8ce4;
-}*/
 
 .header_search {
     height: 90px;
@@ -674,8 +664,9 @@ section {
     background-color: #e5e5e5;
     z-index: -1;
 }
-.headline p a:hover {
-    color: grey;
+
+.headline h3 {
+    color: #fff;
 }
 
 .custom_dropdown {
@@ -850,6 +841,10 @@ select option {
     margin-top: -2px;
     color: #a3a3a3;
     font-size: 14px;
+}
+
+.cart_container {
+    cursor: pointer;
 }
 
 .cart_count {
@@ -1166,8 +1161,7 @@ select option {
             margin-left: -200px;    
             background: #f3f3f3;
             border-radius: 4px; 
-            z-index: 999999;
-            opacity: 1;
+            
         }
         .popup-close {
             position: absolute;
